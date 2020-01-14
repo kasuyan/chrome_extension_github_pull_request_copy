@@ -1,0 +1,16 @@
+{
+	"name": "SAMPLE_2",
+	"manifest_version": 2,
+	"version": "1.0",
+	"browser_action": {
+		"default_title": "SAMPLE_2",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"js": [ "content.js" ],
+			"matches": [ "https://github.com/*/*/pull/*" ]
+		}
+	],
+	"permissions": [ "tabs", "clipboardRead" ]
+}
