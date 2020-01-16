@@ -7,9 +7,18 @@ body {
 
 h1 {
 	margin: 0 0 1.5rem;
+	background-color: #efeeee;
 	text-align: center;
 	box-shadow: 6px 6px 16px #d1cdc7;
 	padding: 0.5rem;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+h2 {
+	text-align: center;
 }
 
 dl {
@@ -30,8 +39,14 @@ dd:last-child {
 }
 
 .col2 {
+	box-shadow: -6px -6px 12px #fff;
+	background-color: #efeeee;
 	display: flex;
-	margin: 1rem 1rem 1.5rem;
+	padding: 1rem 1rem 1.5rem;
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 .col2 button {

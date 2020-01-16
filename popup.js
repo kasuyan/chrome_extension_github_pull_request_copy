@@ -7,6 +7,8 @@ const tmpArea = document.querySelector('#tmp');
 
 const saveData = {
 	prc: {
+		organization: '',
+		repository: '',
 		to: '',
 		message: '',
 		autoCopy: false,

@@ -19,9 +19,11 @@ const createCopyText = (prc) => {
 	const pageTitle = getPRTitle();
 	const pageUrl = getPRUrl();
 	let _tmp = prc.customTemplate;
+	const TO = prc.to !== '' ? '{TO}' : '{TO}\n';
+	const MESSAGE = prc.message !== '' ? '{MESSAGE}' : '{MESSAGE}\n';
 	const replacedText = _tmp
-		.replace('{TO}', prc.to)
-		.replace('{MESSAGE}', prc.message)
+		.replace(TO, prc.to)
+		.replace(MESSAGE, prc.message)
 		.replace('{PR_TITLE}', pageTitle)
 		.replace('{PR_URL}', pageUrl);
 	return replacedText;
@@ -45,6 +47,7 @@ const copied = () => {
 	div.style.padding = '0.5rem';
 	div.style.backgroundColor = '#73c56e';
 	div.style.color = '#fff';
+	div.style.zIndex = 10000;
 	setTimeout(() => {
 		document.body.removeChild(div);
 	}, 1000);

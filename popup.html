@@ -9,20 +9,15 @@
   <body>
     <h1>Pull Request Copy</h1>
     <button id="copy">COPY</button>
+    <h2>Configuration</h2>
     <dl>
       <dt>To:</dt>
-      <dd><input type="text" id="toText" /></dd>
+      <dd><input type="text" id="toText" placeholder="ex. @here" /></dd>
       <dt>Message:</dt>
-      <dd><textarea id="bodyText"></textarea></dd>
-    </dl>
-    <div class="col2">
-      <button id="save">save setting</button>
-      <button id="reset">reset setting</button>
-    </div>
-    <button>detail setting</button>
-    <div class="detail-box">
-    <dl>
-      <div  class="col2-2">
+      <dd><textarea id="bodyText" rows="3" placeholder="ex. please review this pull request :smile:"></textarea></dd>
+      <dt>Template for copy:</dt>
+      <dd><textarea id="tmp" rows="5"></textarea></dd>
+      <div class="col2-2">
         <dt><label for="autoCopy">Auto copy:</label></dt>
         <dd>
           <label for="autoCopy">
@@ -31,10 +26,32 @@
           </label>
         </dd>
       </div>
-      <dt>Copy Templeate</dt>
-      <dd><textarea id="tmp"></textarea></dd>
     </dl>
+
+<!-- 
+    <button>detail setting</button>
+
+    <div class="detail-box">
+      <dl>
+        <div  class="col2-2">
+          <dt><label for="autoCopy">Auto copy:</label></dt>
+          <dd>
+            <label for="autoCopy">
+              <input type="checkbox" id="autoCopy" />
+              <span>ON</span>
+            </label>
+          </dd>
+        </div>
+        <dt>Template for copy</dt>
+        <dd><textarea id="tmp"></textarea></dd>
+      </dl>
     </div>
+-->
+    <div class="col2">
+      <button id="save">SAVE</button>
+      <button id="reset">RESET</button>
+    </div>
+<!--
     <button>Hint</button>
     <div class="detail-box">
       <ul>
@@ -50,7 +67,7 @@
         </li>
       </ul>
     </div>
+-->
     <script src="popup.js"></script>
-  </body
-  >
+  </body>
 </html>

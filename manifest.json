@@ -1,9 +1,9 @@
 {
-	"name": "SAMPLE_2",
+	"name": "Pull Request Copy",
 	"manifest_version": 2,
 	"version": "1.0",
 	"browser_action": {
-		"default_title": "SAMPLE_2",
+		"default_title": "Pull Request Copy",
 		"default_popup": "popup.html"
 	},
 	"permissions": [ "tabs", "clipboardRead", "storage" ],
