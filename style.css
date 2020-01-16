@@ -1,0 +1,141 @@
+body {
+	width: 300px;
+	background-color: #efeeee;
+	color: #323e70;
+	margin: 0;
+}
+
+h1 {
+	margin: 0 0 1.5rem;
+	text-align: center;
+	box-shadow: 6px 6px 16px #d1cdc7;
+	padding: 0.5rem;
+}
+
+dl {
+	margin: 1rem;
+}
+
+dt {
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+dd {
+	margin: 0 0 1rem;
+}
+
+dd:last-child {
+	margin-bottom: 0;
+}
+
+.col2 {
+	display: flex;
+	margin: 1rem 1rem 1.5rem;
+}
+
+.col2 button {
+	margin: 0 0 0 1rem;
+	width: calc(50% - 0.5rem);
+	letter-spacing: 1px;
+	font-size: 0.8rem;
+}
+
+.col2 button:nth-child(2n -1) {
+	margin-left: 0;
+}
+
+.col2-2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#autoCopy {
+	display: none;
+}
+
+#autoCopy + span {
+	display: inline-block;
+	padding: 1rem;
+	border: 1px solid #fff;
+	border: none;
+	border-radius: 2rem;
+	box-shadow: -6px -6px 12px #fff, 6px 6px 16px #d1cdc7;
+	box-sizing: border-box;
+	font-weight: 600;
+}
+
+#autoCopy:checked + span {
+	box-shadow: -6px -6px 16px #fff inset, 6px 6px 6px #d1cdc7 inset;
+}
+
+#toText {
+	width: 100%;
+	border-radius: 0.3rem;
+	border: none;
+	background-color: #efeeee;
+	box-shadow: -6px -6px 16px #fff inset, 6px 6px 6px #d1cdc7 inset;
+	padding: 0.8rem;
+	box-sizing: border-box;
+	color: #323e70;
+	font-size: 1rem;
+}
+
+.detail-box {
+	box-shadow: -6px -6px 16px #fff inset, 6px 6px 6px #d1cdc7 inset;
+	padding: 0.8rem;
+	margin: 0.5rem 0.5rem 1.5rem;
+}
+
+.detail-box dl {
+	margin: 0;
+}
+
+.detail-box ul {
+	margin: 0;
+	padding: 0.5rem;
+}
+
+.detail-box ul li {
+	margin: 0 0 0.5rem 0.5rem;
+}
+
+.detail-box li:last-child {
+	margin-bottom: 0;
+}
+
+textarea {
+	width: 100%;
+	border-radius: 0.3rem;
+	border: none;
+	background-color: #efeeee;
+	box-shadow: -6px -6px 16px #fff inset, 6px 6px 6px #d1cdc7 inset;
+	padding: 0.8rem;
+	box-sizing: border-box;
+	color: #323e70;
+	font-size: 1rem;
+}
+
+button {
+	border: none;
+	display: block;
+	margin: 0 auto 1.5rem;
+	color: #323e70;
+	font-size: 1rem;
+	border-radius: 24px;
+	text-align: center;
+	background-color: #efeeee;
+	box-shadow: -6px -6px 12px #fff, 6px 6px 16px #d1cdc7;
+	width: 200px;
+	height: 42px;
+	letter-spacing: 2px;
+	transition: all 1.0s;
+	font-weight: 600;
+}
+
+button:hover {
+	background-color: #efeeee;
+	box-shadow: -6px -6px 16px #fff inset, 6px 6px 6px #d1cdc7 inset;
+	transition: box-shadow 0.3s;
+}

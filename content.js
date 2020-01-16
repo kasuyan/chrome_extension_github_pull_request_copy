@@ -1,24 +1,51 @@
-chrome.runtime.onMessage.addListener(function(msg) {
-	var body = document.querySelector('body');
-	body.style.backgroundColor = msg.color;
+chrome.storage.local.get('prc', function(result) {
+	if (result.prc && result.prc.autoCopy) {
+		const text = createCopyText(result.prc);
+		chrome.runtime.sendMessage({
+			text: text
+		});
+		copied();
+	}
 });
 
-console.log('start');
-var d = document;
-var s1 = d.getElementsByClassName('js-issue-title');
-console.log('s1=', s1);
-var s2 = location.href;
-var txt = s1[0].innerText + '\n' + s2;
-var cf = d.createElement('textarea');
-cf.textContent = txt;
-var be = d.getElementsByTagName('body')[0];
-be.appendChild(cf);
-cf.select();
+chrome.runtime.onMessage.addListener(function(msg) {
+	const text = createCopyText(msg);
+	chrome.runtime.sendMessage({
+		text: text
+	});
+});
 
-console.log('copy');
-document.execCommand('copy');
-console.log(document.execCommand('copy'));
-setTimeout(function() {
-	// be.removeChild(cf);
-}, 100);
-console.log('done');
+const createCopyText = (prc) => {
+	const pageTitle = getPRTitle();
+	const pageUrl = getPRUrl();
+	let _tmp = prc.customTemplate;
+	const replacedText = _tmp
+		.replace('{TO}', prc.to)
+		.replace('{MESSAGE}', prc.message)
+		.replace('{PR_TITLE}', pageTitle)
+		.replace('{PR_URL}', pageUrl);
+	return replacedText;
+};
+
+const getPRTitle = () => {
+	return document.querySelector('.js-issue-title').textContent.replace(/^\s+|\s+$/g, '');
+};
+
+const getPRUrl = () => {
+	return location.href;
+};
+
+const copied = () => {
+	let div = document.createElement('div');
+	div.innerHTML = 'COPIED';
+	document.body.appendChild(div);
+	div.style.position = 'absolute';
+	div.style.top = 0;
+	div.style.right = 0;
+	div.style.padding = '0.5rem';
+	div.style.backgroundColor = '#73c56e';
+	div.style.color = '#fff';
+	setTimeout(() => {
+		document.body.removeChild(div);
+	}, 1000);
+};
