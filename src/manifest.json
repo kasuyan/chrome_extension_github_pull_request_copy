@@ -1,0 +1,21 @@
+{
+	"name": "Pull Request Copy",
+	"manifest_version": 2,
+	"version": "1.0",
+	"browser_action": {
+		"default_title": "Pull Request Copy",
+		"default_popup": "popup.html"
+	},
+	"permissions": [ "tabs", "clipboardRead", "storage" ],
+	"content_scripts": [
+		{
+			"js": [ "content.js" ],
+			"matches": [ "https://github.com/*/*/pull/*" ]
+		}
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"background": {
+		"scripts": [ "background.js" ],
+		"persistent": false
+	}
+}
